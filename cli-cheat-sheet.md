@@ -818,3 +818,101 @@ pgrep -u pawan
 
 
 
+## 💽 Disk and Memory Management
+
+### 💾 df – Check Disk Space
+
+Displays available and used disk space.
+
+```bash
+# Display disk usage
+df
+
+# Display sizes in human-readable format
+df -h
+
+# Check disk usage for a specific directory
+df -h /home
+```
+
+### 📁 du – Check Directory and File Sizes
+
+Displays how much disk space files and directories consume.
+
+```bash
+# Display size of current directory
+du -sh .
+
+# Display size of a specific directory
+du -sh /home/pawan
+
+# Display sizes of subdirectories
+du -h --max-depth=1 .
+
+# Display sizes in human-readable format
+du -h
+
+# Display sizes of all files and directories, including hidden ones
+du -ah
+```
+
+Useful example:
+
+```bash
+# Find the 10 largest directories/files in the current directory
+du -ah . | sort -rh | head -n 10
+```
+
+### 🖥️ lsblk – List Disks and Partitions
+
+```bash
+# Display available disks and partitions
+lsblk
+
+# Display filesystem information
+lsblk -f
+
+# Display sizes in human-readable format
+lsblk -h
+```
+
+### 🧠 free – Check RAM and Swap Usage
+
+```bash
+# Display memory usage
+free
+
+# Display memory in human-readable format
+free -h
+
+# Update memory information every 2 seconds
+free -h -s 2
+```
+
+Press `Ctrl + C` to stop continuous updates.
+
+
+### 🔧 fdisk – View Disk Partitions
+
+```bash
+# Display disk partition information
+sudo fdisk -l
+```
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `df -h` | Display disk usage |
+| `df -Th` | Display disk usage and filesystem type |
+| `du -sh directory` | Display total directory size |
+| `du -h --max-depth=1 .` | Display immediate subdirectory sizes |
+| `du -ah` | Display sizes of files and directories |
+| `lsblk` | List disks and partitions |
+| `lsblk -f` | Display filesystem information |
+| `free -h` | Display RAM and swap usage |
+| `sudo fdisk -l` | List disk partitions |
+
+---
+
+
