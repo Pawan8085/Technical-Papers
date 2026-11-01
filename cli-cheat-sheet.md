@@ -916,3 +916,95 @@ sudo fdisk -l
 ---
 
 
+## 🖥️ OS and Hardware Information
+
+### 🐧 uname – System Information
+
+```bash
+# Display kernel name
+uname
+
+# Display kernel version
+uname -r
+
+# Display complete system information
+uname -a
+
+# Display machine hardware architecture
+uname -m
+```
+
+### 📋 lsb_release – Linux Distribution Information
+
+```bash
+# Display Linux distribution information
+lsb_release -a
+```
+
+### 🧠 lscpu – CPU Information
+
+```bash
+# Display CPU architecture and details
+lscpu
+
+# Display number of available processors
+nproc
+```
+
+### 🔌 lsusb – USB Devices
+
+```bash
+# List connected USB devices
+lsusb
+
+# Display detailed USB information
+lsusb -v
+```
+
+### 🧩 lspci – PCI Devices
+
+```bash
+# List PCI devices
+lspci
+
+# Display detailed PCI device information
+lspci -v
+
+# Search for graphics devices
+lspci | grep -i vga
+```
+
+
+### ⏱️ uptime – System Uptime
+
+```bash
+# Display how long the system has been running
+uptime
+
+# Display uptime in a readable format
+uptime -p
+
+# Display the last boot time
+uptime -s
+```
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `uname -a` | Display complete kernel/system information |
+| `uname -r` | Display kernel version |
+| `uname -m` | Display machine architecture |
+| `lsb_release -a` | Display Linux distribution information |
+| `cat /etc/os-release` | Display OS details |
+| `lscpu` | Display CPU information |
+| `nproc` | Display available processing units |
+| `lsusb` | List USB devices |
+| `lspci` | List PCI devices |
+| `uptime` | Display system uptime |
+| `uptime -p` | Display uptime in readable format |
+| `uptime -s` | Display last boot time |
+
+---
+
+
