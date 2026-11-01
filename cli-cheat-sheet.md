@@ -598,4 +598,131 @@ find . -type f -name "*.tmp" -delete
 
 
 
+## 🔐 File Permissions
+
+
+### 👀 Understanding Permissions
+
+```bash
+# View file permissions
+ls -l
+```
+
+Example output:
+
+```text
+-rwxr-xr-- 1 pawan pawan 1200 Nov 1 10:00 script.sh
+```
+
+Permission structure:
+
+```text
+-   rwx   r-x   r--
+|    |     |     |
+|  Owner  Group Others
+|
+File type
+```
+
+| Symbol | Meaning |
+|---|---|
+| `r` | Read |
+| `w` | Write |
+| `x` | Execute |
+| `-` | Permission not granted |
+
+### 🔑 chmod – Change Permissions
+
+**1. Numeric Method**
+
+| Number | Permission |
+|---:|---|
+| 0 | `---` |
+| 1 | `--x` |
+| 2 | `-w-` |
+| 3 | `-wx` |
+| 4 | `r--` |
+| 5 | `r-x` |
+| 6 | `rw-` |
+| 7 | `rwx` |
+
+```bash
+# Owner: rwx, Group: r-x, Others: r--
+chmod 754 script.sh
+
+# Give everyone read and write permissions
+chmod 666 file.txt
+
+# Give owner full permissions only
+chmod 700 script.sh
+
+# Remove all permissions from everyone
+chmod 000 file.txt
+```
+
+**2. Symbolic Method**
+
+```bash
+# Give owner execute permission
+chmod u+x script.sh
+
+# Remove write permission from group
+chmod g-w file.txt
+
+# Give others read permission
+chmod o+r file.txt
+
+# Give everyone read permission
+chmod a+r file.txt
+
+# Give owner read/write, group read, and others no permissions
+chmod u=rw,g=r,o= file.txt
+```
+
+Permission categories:
+
+| Symbol | Meaning |
+|---|---|
+| `u` | User (Owner) |
+| `g` | Group |
+| `o` | Others |
+| `a` | All |
+
+### 👤 chown – Change Ownership
+
+```bash
+# Change file owner
+sudo chown pawan file.txt
+
+# Change owner and group
+sudo chown pawan:pawan file.txt
+
+# Change ownership recursively
+sudo chown -R pawan:pawan mydir
+```
+
+### 👥 chgrp – Change Group
+
+```bash
+# Change file group
+sudo chgrp developers file.txt
+
+# Change group recursively
+sudo chgrp -R developers mydir
+```
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `ls -l` | View file permissions |
+| `chmod 755 file` | Change permissions numerically |
+| `chmod u+x file` | Add execute permission for owner |
+| `chmod g-w file` | Remove group write permission |
+| `chown user file` | Change file owner |
+| `chown user:group file` | Change owner and group |
+| `chgrp group file` | Change file group |
+
+---
+
 
