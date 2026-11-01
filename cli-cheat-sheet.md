@@ -328,5 +328,108 @@ command > output.txt 2>&1
 ---
 
 
+## 🔍 Pipes and Text Processing
+
+Pipes allow you to pass the output of one command as input to another command. 
+
+### 🔗 Pipes (`|`)
+
+```bash
+# Pass output of one command to another
+ls -l | less
+
+# Search files containing a keyword
+ls | grep ".txt"
+
+# Count files in the current directory
+ls | wc -l
+
+# Display running processes containing a keyword
+ps aux | grep java
+```
+
+### 🔎 grep – Search Text
+
+```bash
+# Search for a word in a file
+grep "error" application.log
+
+# Case-insensitive search
+grep -i "error" application.log
+
+# Display matching line numbers
+grep -n "error" application.log
+
+# Search recursively inside directories
+grep -r "TODO" .
+
+# Display lines that do not match
+grep -v "INFO" application.log
+
+# Count matching lines
+grep -c "ERROR" application.log
+
+# Match a complete word
+grep -w "failed" application.log
+
+# Search using extended regular expressions
+grep -E "ERROR|WARN" application.log
+```
+
+### 🔤 sort – Sort Lines
+
+```bash
+# Sort lines alphabetically
+sort names.txt
+
+# Sort in reverse order
+sort -r names.txt
+
+# Sort numerically
+sort -n numbers.txt
+
+# Sort and ignore case
+sort -f names.txt
+
+# Sort and remove duplicate lines
+sort -u names.txt
+```
+
+### 🔁 uniq – Handle Duplicate Lines
+
+```bash
+# Remove consecutive duplicate lines
+uniq names.txt
+
+# Display duplicate lines with their counts
+uniq -c names.txt
+
+# Display only duplicate lines
+uniq -d names.txt
+
+# Display only unique lines
+uniq -u names.txt
+```
+
+### 📋 Useful Commands
+
+| Command | Description |
+|---|---|
+| `command1 \| command2` | Passes output of the first command to the second |
+| `grep "word" file` | Searches for a word |
+| `grep -i "word" file` | Searches without case sensitivity |
+| `grep -n "word" file` | Displays matching line numbers |
+| `grep -r "word" directory` | Searches recursively |
+| `grep -v "word" file` | Displays non-matching lines |
+| `grep -c "word" file` | Counts matching lines |
+| `sort file` | Sorts lines alphabetically |
+| `sort -r file` | Sorts in reverse order |
+| `sort -n file` | Sorts numerically |
+| `sort -u file` | Sorts and removes duplicates |
+| `uniq file` | Removes consecutive duplicate lines |
+| `uniq -c file` | Counts consecutive duplicate lines |
+
+---
+
 
 
