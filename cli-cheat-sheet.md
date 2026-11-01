@@ -261,4 +261,72 @@ tail -n 5 file.txt
 ---
 
 
+## ↪️ Redirection
+
+
+### 📤 Output Redirection
+
+```bash
+# Redirect output to a file (overwrites existing content)
+echo "Hello World" > output.txt
+
+# Append output to a file
+echo "New Line" >> output.txt
+
+# Redirect command output to a file
+ls -l > files.txt
+
+# Append command output to a file
+date >> output.txt
+```
+
+### 📥 Input Redirection
+
+```bash
+# Read input from a file
+cat < input.txt
+
+# Pass file content as input to a command
+sort < names.txt
+```
+
+### ⚠️ Error Redirection
+
+```bash
+# Redirect error messages to a file
+ls /invalid-path 2> errors.txt
+
+# Append error messages to a file
+ls /invalid-path 2>> errors.txt
+
+# Redirect standard output and errors to the same file
+command > output.txt 2>&1
+
+```
+
+### 🔢 Standard Streams
+
+| Stream | File Descriptor | Description |
+|---|---:|---|
+| Standard Input (stdin) | `0` | Receives input |
+| Standard Output (stdout) | `1` | Displays normal output |
+| Standard Error (stderr) | `2` | Displays error messages |
+
+### 📋 Useful Operators
+
+| Operator | Description |
+|---|---|
+| `>` | Redirects output and overwrites the file |
+| `>>` | Redirects output and appends to the file |
+| `<` | Takes input from a file |
+| `2>` | Redirects error output |
+| `2>>` | Appends error output |
+| `2>&1` | Redirects stderr to the current stdout destination |
+| `&>` | Redirects stdout and stderr |
+| `/dev/null` | Discards output |
+
+---
+
+
+
 
