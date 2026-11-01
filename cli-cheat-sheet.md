@@ -432,4 +432,57 @@ uniq -u names.txt
 ---
 
 
+## 🔢 Word and Line Counting (`wc`)
+
+### 📊 wc – Count Lines, Words, and Characters
+
+```bash
+# Display lines, words, and bytes
+wc application.log
+
+# Count lines
+wc -l application.log
+
+# Count words
+wc -w application.log
+
+# Count bytes
+wc -c application.log
+
+# Count characters
+wc -m application.log
+
+# Display the length of the longest line
+wc -L application.log
+```
+
+### 🔗 wc with Pipes
+
+```bash
+# Count lines containing ERROR
+grep "ERROR" application.log | wc -l
+
+# Count files in the current directory
+ls -1 | wc -l
+
+# Count all files recursively
+find . -type f | wc -l
+```
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `wc file` | Counts lines, words, and bytes |
+| `wc -l file` | Counts lines |
+| `wc -w file` | Counts words |
+| `wc -c file` | Counts bytes |
+| `wc -m file` | Counts characters |
+| `wc -L file` | Finds the longest line length |
+| `command \| wc -l` | Counts lines from command output |
+
+
+
+
+
 
