@@ -425,6 +425,77 @@ git revert HEAD
 
 
 
+## 📦 Git Stash
+
+Git stash temporarily saves uncommitted changes.
+
+### 💾 Save Changes
+
+```bash
+# Stash tracked changes
+git stash
+
+# Stash changes with a description
+git stash save "Work in progress"
+
+# Include untracked files
+git stash -u
+
+```
+
+### 📋 View Stashes
+
+```bash
+# List all stashes
+git stash list
+
+# Display the latest stash
+git stash show
+
+# Display the latest stash with detailed changes
+git stash show -p
+```
+
+### ♻️ Restore Stashed Changes
+
+```bash
+# Restore the latest stash and keep it in the stash list
+git stash apply
+
+# Restore a specific stash
+git stash apply stash@{1}
+
+# Restore and remove the latest stash
+git stash pop
+```
+
+### 🗑️ Remove Stashes
+
+```bash
+# Delete a specific stash
+git stash drop stash@{0}
+
+# Delete all stashes
+git stash clear
+```
+
+### 📋 Useful Commands
+
+| Command | Description |
+|---|---|
+| `git stash` | Temporarily saves tracked changes |
+| `git stash -u` | Includes untracked files |
+| `git stash -a` | Includes ignored files too |
+| `git stash list` | Lists all stashes |
+| `git stash show -p` | Displays detailed stash changes |
+| `git stash apply` | Restores changes without deleting the stash |
+| `git stash pop` | Restores changes and removes the stash |
+| `git stash drop` | Deletes a specific stash |
+| `git stash clear` | Deletes all stashes |
+
+---
+
+
 
 
 
