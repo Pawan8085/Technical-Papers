@@ -188,3 +188,77 @@ rm -rf projects
 | `rm -rf directory` | Forcefully deletes a directory and its contents |
 
 
+## 📄 File Content
+
+### 📃 Display File Contents
+
+```bash
+# Display complete file contents
+cat file.txt
+
+# Display contents of multiple files
+cat file1.txt file2.txt
+
+# Display contents with line numbers
+cat -n file.txt
+```
+
+### 👀 View File Content Page by Page
+
+```bash
+# Open a file using less
+less file.txt
+
+# Open a file using more
+more file.txt
+```
+
+**Useful navigation inside `less`:**
+- `Space` – Next page
+- `b` – Previous page
+- `/keyword` – Search forward
+- `?keyword` – Search backward
+- `n` – Next search match
+- `N` – Previous search match
+- `q` – Quit
+
+### 🔝 Display First Lines
+
+```bash
+# Display first 10 lines
+head file.txt
+
+# Display first 5 lines
+head -n 5 file.txt
+```
+
+### 🔽 Display Last Lines
+
+```bash
+# Display last 10 lines
+tail file.txt
+
+# Display last 5 lines
+tail -n 5 file.txt
+
+```
+
+### 📋 Useful Commands
+
+| Command | Description |
+|---|---|
+| `cat file.txt` | Displays complete file contents |
+| `cat -n file.txt` | Displays contents with line numbers |
+| `less file.txt` | Views file content page by page |
+| `more file.txt` | Views file content one page at a time |
+| `head file.txt` | Displays the first 10 lines |
+| `head -n 5 file.txt` | Displays the first 5 lines |
+| `tail file.txt` | Displays the last 10 lines |
+| `tail -n 5 file.txt` | Displays the last 5 lines |
+| `tail -f file.log` | Continuously monitors new content |
+| `tail -F file.log` | Follows a file even if it is recreated after rotation |
+
+---
+
+
+
