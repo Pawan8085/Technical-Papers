@@ -93,3 +93,98 @@ tree -a
 | `tree -L 2` | Displays structure up to 2 levels |
 
 ---
+
+
+## 📁 File and Folder Operations
+
+
+### 📄 Create Files
+
+```bash
+# Create an empty file
+touch file.txt
+
+# Create multiple files
+touch file1.txt file2.txt file3.txt
+```
+
+### 📂 Create Directories
+
+```bash
+# Create a directory
+mkdir projects
+
+# Create multiple directories
+mkdir dir1 dir2 dir3
+
+# Create nested directories
+mkdir -p projects/java/backend
+```
+
+### 📋 Copy Files and Directories
+
+```bash
+# Copy a file
+cp file.txt backup.txt
+
+# Copy a file into a directory
+cp file.txt backup/
+
+# Copy multiple files into a directory
+cp file1.txt file2.txt backup/
+
+# Copy a directory recursively
+cp -r projects backup/
+```
+
+### 🚚 Move and Rename Files
+
+```bash
+# Move a file into a directory
+mv file.txt backup/
+
+# Rename a file
+mv old.txt new.txt
+
+# Move and rename a file
+mv file.txt backup/new-file.txt
+
+# Move a directory
+mv projects backup/
+```
+
+### 🗑️ Delete Files and Directories
+
+```bash
+# Delete a file
+rm file.txt
+
+# Delete multiple files
+rm file1.txt file2.txt
+
+# Delete an empty directory
+rmdir projects
+
+# Delete a directory and its contents
+rm -r projects
+
+# Force delete without confirmation
+rm -rf projects
+```
+
+### 📋 Useful Commands
+
+| Command | Description |
+|---|---|
+| `touch file.txt` | Creates an empty file |
+| `mkdir directory` | Creates a directory |
+| `mkdir -p path` | Creates nested directories |
+| `cp source destination` | Copies a file |
+| `cp -r source destination` | Copies a directory recursively |
+| `mv source destination` | Moves or renames files and directories |
+| `rm file.txt` | Deletes a file |
+| `rmdir directory` | Deletes an empty directory |
+| `rm -r directory` | Deletes a directory and its contents |
+| `rm -rf directory` | Forcefully deletes a directory and its contents |
+
+
