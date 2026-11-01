@@ -726,3 +726,95 @@ sudo chgrp -R developers mydir
 ---
 
 
+## ⚙️ Process Management
+
+### 🔍 ps – View Running Processes
+
+```bash
+# Display processes running in the current terminal
+ps
+
+# Display all running processes
+ps aux
+
+# Display processes in detailed format
+ps -ef
+
+# Search for a specific process
+ps aux | grep java
+
+# Display a process using its PID
+ps -p 1234
+```
+
+### 📊 top – Monitor Processes in Real Time
+
+```bash
+# Display running processes and system resource usage
+top
+```
+
+Useful keyboard shortcuts inside `top`:
+
+| Key | Description |
+|---|---|
+| `q` | Quit |
+| `k` | Kill a process |
+| `P` | Sort by CPU usage |
+| `M` | Sort by memory usage |
+
+### 🛑 kill – Terminate a Process
+
+```bash
+# Terminate a process using PID
+kill 1234
+
+# Forcefully terminate a process
+kill -9 1234
+
+# Send a specific signal
+kill -SIGTERM 1234
+
+# Display available signals
+kill -l
+```
+
+Common signals:
+
+| Signal | Number | Description |
+|---|---:|---|
+| `SIGTERM` | 15 | Request graceful termination |
+| `SIGKILL` | 9 | Forcefully terminate a process |
+| `SIGSTOP` | 19 | Pause a process |
+| `SIGCONT` | 18 | Resume a stopped process |
+
+### 🔎 pgrep – Find Process IDs
+
+```bash
+# Find process IDs by name
+pgrep java
+
+# Search with full command line
+pgrep -af java
+
+# Search for processes belonging to a user
+pgrep -u pawan
+```
+
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `ps` | View current terminal processes |
+| `ps aux` | View all processes |
+| `ps -ef` | View processes in full format |
+| `top` | Monitor processes in real time |
+| `kill PID` | Gracefully terminate a process |
+| `kill -9 PID` | Forcefully terminate a process |
+| `pgrep java` | Find process IDs by name |
+
+---
+
+
+
