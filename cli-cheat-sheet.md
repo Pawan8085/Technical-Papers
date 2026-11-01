@@ -483,6 +483,119 @@ find . -type f | wc -l
 
 
 
+## 🔎 Finding Files (`find` and `locate`)
+
+### 🔍 find – Search Files and Directories
+
+```bash
+# Find a file by name in the current directory and subdirectories
+find . -name "application.log"
+
+# Find files with a particular extension
+find . -name "*.log"
+
+# Find directories by name
+find . -type d -name "backend"
+
+# Find files only
+find . -type f -name "*.py"
+
+# Search without case sensitivity
+find . -iname "application.log"
+
+# Find files modified in the last 7 days
+find . -type f -mtime -7
+
+# Find files larger than 10 MB
+find . -type f -size +10M
+
+# Find and delete files (use carefully)
+find . -type f -name "*.tmp" -delete
+```
+
+### 📍 locate – Search by File Path
+
+```bash
+# Search for a file
+locate application.log
+
+# Search for Python files
+locate "*.py"
+
+# Search without case sensitivity
+locate -i application.log
+
+# Update the locate database
+sudo updatedb
+```
+
+**Note:**
+- `find` searches the filesystem directly and reflects current changes.
+- `locate` searches an indexed database, so newly created files might not appear until its database is updated.
+- Install `locate` on Ubuntu if needed:
+
+```bash
+sudo apt install plocate
+```
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `find . -name "file"` | Finds a file by name |
+| `find . -iname "file"` | Finds a file ignoring case |
+| `find . -type f` | Finds files only |
+| `find . -type d` | Finds directories only |
+| `find . -name "*.log"` | Finds files by extension |
+| `find . -mtime -7` | Finds files modified within 7 days |
+| `find . -size +10M` | Finds files larger than 10 MB |
+| `locate file` | Searches indexed file paths |
+| `sudo updatedb` | Updates the locate database |
+
+
+
+## 🔎 Finding Files (`find`)
+
+### 🔍 find – Search Files and Directories
+
+```bash
+# Find a file by name in the current directory and subdirectories
+find . -name "application.log"
+
+# Find files with a particular extension
+find . -name "*.log"
+
+# Find directories by name
+find . -type d -name "backend"
+
+# Find files only
+find . -type f -name "*.py"
+
+# Search without case sensitivity
+find . -iname "application.log"
+
+# Find files modified in the last 7 days
+find . -type f -mtime -7
+
+# Find files larger than 10 MB
+find . -type f -size +10M
+
+# Find and delete files (use carefully)
+find . -type f -name "*.tmp" -delete
+```
+
+### 📋 Quick Revision
+
+| Command | Description |
+|---|---|
+| `find . -name "file"` | Finds a file by name |
+| `find . -iname "file"` | Finds a file ignoring case |
+| `find . -type f` | Finds files only |
+| `find . -type d` | Finds directories only |
+| `find . -name "*.log"` | Finds files by extension |
+| `find . -mtime -7` | Finds files modified within 7 days |
+| `find . -size +10M` | Finds files larger than 10 MB |
+
 
 
 
