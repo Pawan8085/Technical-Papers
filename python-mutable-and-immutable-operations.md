@@ -1,8 +1,6 @@
 
 # 🐍 Python Mutable and Immutable Operations
 
-## 1. What are Mutable and Immutable Operations?
-
 ### Mutating Methods
 
 - Mutating methods modify the original object.
@@ -281,16 +279,6 @@ print(deep_copy)
 
 # Dictionary Operations
 
-A dictionary is a mutable collection that stores data in key-value pairs.
-
-```python
-employee = {
-    "name": "Pawan",
-    "age": 25,
-    "salary": 50000
-}
-```
-
 ##  Mutating Dictionary Methods
 
 These methods modify the original dictionary.
@@ -300,101 +288,107 @@ These methods modify the original dictionary.
 We can add a new key or update an existing key using assignment.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+artist = {
+    "name": "Skrillex",
+    "age": 37  
 }
 
-# Add a new key
-employee["salary"] = 50000
-
 # Update an existing key
-employee["age"] = 26
+artist["age"] = 38
 
-print(employee)
+# Add a new key
+artist["city"] = "Los Angeles"
+
+print(artist)
+# {'name': 'Skrillex', 'age': 38, 'city': 'Los Angeles'}
 ```
 
-### 2. `update()`
+## Mutating Dictionary Methods
+
+These methods modify the original dictionary.
+
+### 1. `update()`
 
 Adds multiple key-value pairs or updates existing ones.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-employee.update({
-    "age": 26,
-    "salary": 50000
+student.update({
+    "age": 21,
+    "course": "Python"
 })
 
-print(employee)
+print(student)
+# {'name': 'Arvind', 'age': 21, 'course': 'Python'}
 ```
 
-### 3. `setdefault()`
+### 2. `setdefault()`
 
 Adds a key with a default value if the key does not exist.
 
 If the key already exists, its existing value is returned without modification.
 
 ```python
-employee = {
-    "name": "Pawan"
+student = {
+    "name": "Arvind"
 }
 
-employee.setdefault("age", 25)
+student.setdefault("age", 20)
 
-print(employee)
-# {'name': 'Pawan', 'age': 25}
+print(student)
+# {'name': 'Arvind', 'age': 20}
 ```
 
-### 4. `pop()`
+### 3. `pop()`
 
 Removes a specified key and returns its value.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-removed_value = employee.pop("age")
+removed_value = student.pop("age")
 
-print(removed_value)  # 25
-print(employee)       # {'name': 'Pawan'}
+print(removed_value)  # 20
+print(student)        # {'name': 'Arvind'}
 ```
 
-### 5. `popitem()`
+### 4. `popitem()`
 
 Removes and returns the last inserted key-value pair.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25,
-    "salary": 50000
+student = {
+    "name": "Arvind",
+    "age": 20,
+    "course": "Python"
 }
 
-removed_item = employee.popitem()
+removed_item = student.popitem()
 
-print(removed_item)  # ('salary', 50000)
-print(employee)
+print(removed_item)  # ('course', 'Python')
+print(student)       # {'name': 'Arvind', 'age': 20}
 ```
 
-### 6. `clear()`
+### 5. `clear()`
 
 Removes all key-value pairs.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-employee.clear()
+student.clear()
 
-print(employee)  # {}
+print(student)  # {}
 ```
 
 ---
@@ -408,16 +402,16 @@ These methods do not modify the original dictionary.
 Returns the value of a key. If the key does not exist, it returns `None` by default.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-print(employee.get("name"))        # Pawan
-print(employee.get("salary"))      # None
-print(employee.get("salary", 0))   # 0
+print(student.get("name"))       # Arvind
+print(student.get("course"))     # None
+print(student.get("course", 0))  # 0
 
-print(employee)
+print(student)
 ```
 
 ### 2. `keys()`
@@ -425,12 +419,12 @@ print(employee)
 Returns a view containing all dictionary keys.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-result = employee.keys()
+result = student.keys()
 
 print(result)
 # dict_keys(['name', 'age'])
@@ -441,15 +435,15 @@ print(result)
 Returns a view containing all dictionary values.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-result = employee.values()
+result = student.values()
 
 print(result)
-# dict_values(['Pawan', 25])
+# dict_values(['Arvind', 20])
 ```
 
 ### 4. `items()`
@@ -457,15 +451,15 @@ print(result)
 Returns a view containing key-value pairs as tuples.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-result = employee.items()
+result = student.items()
 
 print(result)
-# dict_items([('name', 'Pawan'), ('age', 25)])
+# dict_items([('name', 'Arvind'), ('age', 20)])
 ```
 
 ### 5. `copy()`
@@ -473,22 +467,19 @@ print(result)
 Returns a shallow copy of the dictionary.
 
 ```python
-employee = {
-    "name": "Pawan",
-    "age": 25
+student = {
+    "name": "Arvind",
+    "age": 20
 }
 
-new_employee = employee.copy()
+new_student = student.copy()
 
-new_employee["age"] = 26
+new_student["age"] = 21
 
-print(employee)      # {'name': 'Pawan', 'age': 25}
-print(new_employee)  # {'name': 'Pawan', 'age': 26}
+print(student)      # {'name': 'Arvind', 'age': 20}
+print(new_student)  # {'name': 'Arvind', 'age': 21}
 ```
 
-**Important:** Dictionary `copy()` also creates a shallow copy. For nested dictionaries, nested mutable objects are still shared.
-
----
 
 # String Operations
 
@@ -529,7 +520,18 @@ print(text)      # python
 print(new_text)  # PYTHON
 ```
 
-### Example 2: `replace()`
+### Example 2: `lower()`
+
+```python
+text = "HELLO WORLD"
+
+new_text = text.lower()
+
+print(text)      # HELLO WORLD
+print(new_text)  # hello world
+```
+
+### Example 3: `replace()`
 
 ```python
 text = "Python is easy"
@@ -540,24 +542,3 @@ print(text)      # Python is easy
 print(new_text)  # Python is powerful
 ```
 
-### Example 3: `strip()`
-
-```python
-text = "   Python   "
-
-new_text = text.strip()
-
-print(text)      # Original string with spaces
-print(new_text)  # Python
-```
-
-### Example 4: `lower()`
-
-```python
-text = "HELLO WORLD"
-
-new_text = text.lower()
-
-print(text)      # HELLO WORLD
-print(new_text)  # hello world
-```
