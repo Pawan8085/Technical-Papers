@@ -189,7 +189,7 @@ print(new_numbers)  # [10, 20, 30, 40]
 
 ### 4. `deepcopy()`
 
-Returns a shallow copy of the list.
+Returns a deep copy of the list.
 
 ```python
 numbers = [10, 20, 30]
