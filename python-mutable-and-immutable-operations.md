@@ -186,7 +186,23 @@ new_numbers.append(40)
 print(numbers)      # [10, 20, 30]
 print(new_numbers)  # [10, 20, 30, 40]
 ```
-### 4. `sorted()`
+
+### 4. `deepcopy()`
+
+Returns a shallow copy of the list.
+
+```python
+numbers = [10, 20, 30]
+
+new_numbers = numbers.deepcopy()
+
+new_numbers.append(40)
+
+print(numbers)      # [10, 20, 30]
+print(new_numbers)  # [10, 20, 30, 40]
+```
+
+### 5. `sorted()`
 
 Returns a new sorted list without modifying the original list.
 
@@ -209,7 +225,7 @@ new_numbers = sorted(numbers, reverse=True)
 print(new_numbers)  # [40, 30, 20, 10]
 ```
 
-### 5. `reversed()`
+### 6. `reversed()`
 
 Returns an iterator that provides elements in reverse order. It does not modify the original list.
 
@@ -228,32 +244,36 @@ print(numbers)      # [10, 20, 30, 40]
 
 Before understanding these methods, let's understand shallow copy and deep copy.
 
-### Shallow Copy
+## Shallow Copy
 
 - Creates a new outer collection.
-- Nested objects are still shared between the original and copied collections.
-- Changes to a nested mutable object can affect both collections.
+- Nested mutable objects are not copied; they are shared with the original collection.
+- Changes to first-level elements do not affect the original collection.
+- Changes to nested mutable objects affect both collections.
 
 ```python
 import copy
 
-original = [[10, 20], [30, 40]]
+original = [5, [10, 20], [30, 40]]
 
 shallow_copy = copy.copy(original)
 
-# Modify a nested list
-shallow_copy[0].append(50)
+# Update first-level element
+shallow_copy[0] = 6
 
-print(shallow_copy)
-# [[10, 20, 50], [30, 40]]
+# Update nested-level element
+shallow_copy[1][0] = 7
 
-print(original)
-# [[10, 20, 50], [30, 40]]
+print("Copied:", shallow_copy)
+# [6, [7, 20], [30, 40]]
+
+print("Original:", original)
+# [5, [7, 20], [30, 40]]
 ```
 
 Here, both lists refer to the same nested list objects.
 
-### Deep Copy
+## Deep Copy
 
 - Creates a new outer collection and recursively copies nested objects.
 - Nested mutable objects are not shared with the original collection.
@@ -274,6 +294,27 @@ print(original)
 
 print(deep_copy)
 # [[10, 20, 50], [30, 40]]
+```
+
+## Custom `deep_copy()` Function
+
+We can implement our own deep copy function using recursion.
+
+```python
+def deep_copy(lst):
+
+    res = []
+
+    for element in lst:
+
+        if type(element) is list:
+            inner_list = deep_copy(element)
+            res.append(inner_list)
+
+        else:
+            res.append(element)
+
+    return res
 ```
 ---
 
